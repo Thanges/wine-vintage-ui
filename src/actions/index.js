@@ -6,7 +6,7 @@ export const RESET = 'RESET'
 export const FETCH_POST = 'FETCH_POST';
 
 
-const apiUrl = 'http://localhost:3000/priceinfo';
+const apiUrl = 'http://localhost:3001/prices';
 
 
 

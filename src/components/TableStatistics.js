@@ -1,30 +1,36 @@
 import React, { Component } from 'react';
+import { connect } from "react-redux";
+
 
 
 class ChartStatistics extends Component {
   render() {
+        const { posts } = this.props;
+
     return (
       <div>
-     <table>
-  <tr>
-    <th>Firstname</th>
-    <th>Lastname</th> 
-    <th>Age</th>
-  </tr>
-  <tr>
-    <td>Jill</td>
-    <td>Smith</td> 
-    <td>50</td>
-  </tr>
-  <tr>
-    <td>Eve</td>
-    <td>Jackson</td> 
-    <td>94</td>
-  </tr>
-</table>
+       <table>
+         {posts.map( item =>    
+          <tr>
+           return (
+              {item.map( => row
+                  <td>{row.amt}</td>
+              )}
+            )      
+            </td>
+        )}
+        </table>
       </div>
     );
   }
 }
 
-export default ChartStatistics;
+
+const mapStateToProps = state => {
+  return {
+    posts: state.posts
+  };
+};
+
+export default connect(mapStateToProps)(ChartStatistics);
+
