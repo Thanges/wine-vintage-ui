@@ -1,12 +1,14 @@
 import { combineReducers } from 'redux'
-import { HELLO_WORLD, RESET } from './../actions'
+import { HELLO_WORLD, RESET,FETCH_POST } from './../actions'
 
 let initialState = { message: 'Hello' }
 
-const helloWorld = (state=initialState, action) => {
+const posts = (state=initialState, action) => {
   switch (action.type) {
     case HELLO_WORLD:
       return Object.assign({}, state, { message: 'Hello, World!' })
+    case FETCH_POST:
+      return action.posts;  
     case RESET:
     	return state = initialState 
     default:
@@ -15,7 +17,7 @@ const helloWorld = (state=initialState, action) => {
 }
 
 const helloReducer = combineReducers({
-  helloWorld
+      posts: posts
 })
 
 export default helloReducer
