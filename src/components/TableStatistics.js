@@ -13,11 +13,11 @@ class ChartStatistics extends Component {
          {posts.map( item =>    
           <tr>
            return (
-              {item.map( => row
+              {item.map( row => 
                   <td>{row.amt}</td>
               )}
             )      
-            </td>
+         </tr>   
         )}
         </table>
       </div>
